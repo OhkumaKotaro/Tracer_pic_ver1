@@ -14,7 +14,7 @@ extern "C" {
 
     void Test_Lchika(void);
     void Test_Sw(void);
-
+    void Test_Sensor(void);
 
 
 
