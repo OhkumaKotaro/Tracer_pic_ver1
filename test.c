@@ -2,7 +2,7 @@
 #include "config.h"
 #include "interface.h"
 
-void Test_Lchika(void) {
+void Test_LED(void) {
     PORTA = LED_LL | LED_L | LED_C | LED_R | LED_RR; //turn on LEDs
     wait_ms(1000);
     PORTA = LED_LL | LED_L | LED_C | LED_R; //turn on LEDs
@@ -17,7 +17,7 @@ void Test_Lchika(void) {
     wait_ms(1000);
 }
 
-void Test_Sw(void) {
+void Test_Switch(void) {
     if (Inter_Sw() == 0) {
         PORTA = LED_LL | LED_L | LED_C | LED_R | LED_RR; //turn on LEDs
         wait_ms(1000);

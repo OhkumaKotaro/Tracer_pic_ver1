@@ -12,8 +12,8 @@
 extern "C" {
 #endif
 
-    void Test_Lchika(void);
-    void Test_Sw(void);
+    void Test_LED(void);
+    void Test_Switch(void);
     void Test_Sensor(void);
 
 
