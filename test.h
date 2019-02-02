@@ -15,6 +15,7 @@ extern "C" {
     void Test_LED(void);
     void Test_Switch(void);
     void Test_Sensor(void);
+    void Test_Motor(void);
 
 
 

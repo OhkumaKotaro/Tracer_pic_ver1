@@ -23,7 +23,7 @@ void Config_mode(void){
     //set ports as input or output
     TRISA = 0x20;            //  portA : RA0,1,2,3,4:output, RA5:input   0010_0000(bin) = 20(hex)
     TRISB = 0xFF;            //  portB : all input 1111_1111 = FF
-    TRISC = 0xFF;            //  portC : are all input 1111_1111 = FF
+    TRISC = 0x00;            //  portC : are all input 1111_1111 = FF
 
     //set ports to 0
     PORTA = 0x00;            //  reset portA 

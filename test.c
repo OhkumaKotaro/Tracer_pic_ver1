@@ -1,6 +1,7 @@
 #include <xc.h>
 #include "config.h"
 #include "interface.h"
+#include "control.h"
 
 void Test_LED(void) {
     PORTA = LED_LL | LED_L | LED_C | LED_R | LED_RR; //turn on LEDs
@@ -39,30 +40,14 @@ void Test_Switch(void) {
     }
 }
 
-void Test_Sensor(void){
-   if(PORTBbits.RB0){
-       PORTA = PORTA | LED_LL;
-   }else if(LED_LL == (PORTA & LED_LL)){
-       PORTA -= LED_LL; 
-   }
-   if(PORTBbits.RB1){
-       PORTA = PORTA | LED_L;
-   }else if(LED_L == (PORTA & LED_L)){
-       PORTA -= LED_L; 
-   }
-   if(PORTBbits.RB2){
-       PORTA = PORTA | LED_C;
-   }else if(LED_C == (PORTA & LED_C)){
-       PORTA -= LED_C; 
-   }
-   if(PORTBbits.RB3){
-       PORTA = PORTA | LED_R;
-   }else if(LED_R == (PORTA & LED_R)){
-       PORTA -= LED_R; 
-   }
-   if(PORTBbits.RB4){
-       PORTA = PORTA | LED_RR;
-   }else if(LED_RR == (PORTA & LED_RR)){
-       PORTA -= LED_RR; 
-   }
+void Test_Sensor(void) {
+    PORTAbits.RA0 = PORTBbits.RB0; /* Left sensor Å®Left LED */
+    PORTAbits.RA1 = PORTBbits.RB1; /* Left center sensor Å®Left center LED */
+    PORTAbits.RA2 = PORTBbits.RB2; /* Center sensor Å®Center LED */
+    PORTAbits.RA3 = PORTBbits.RB3; /* Right center sensor Å®Right center LED */
+    PORTAbits.RA4 = PORTBbits.RB4; /* Right sensor Å®Right LED */
+}
+
+void Test_Motor(void) {
+    Control_Motor(50, 299);
 }

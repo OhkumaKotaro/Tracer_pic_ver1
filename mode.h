@@ -15,8 +15,6 @@ extern "C" {
     void Mode_Serect(unsigned char mode);
     unsigned char Mode_Switch(void);
 
-
-
 #ifdef	__cplusplus
 }
 #endif
