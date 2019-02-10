@@ -13,7 +13,7 @@ void Mode_Serect(unsigned char mode) {
             break;
         case 2:
             while (1) {
-                Test_Switch();
+                Check_Sensor();
             }
             break;
         case 3:
@@ -56,14 +56,21 @@ unsigned char Mode_Switch(void) {
 }
 
 void Mode_Trace(void) {
+    int buff_l = 0, buff_r = 0;
     while (1) {
-        int buff = 9 * Control_Sensor();
+        if (Check_Sensor()) {
+            int buff = 15 * Control_Sensor();
 
-        Check_Sensor();
+            buff_l = 100 + buff;
+            buff_r = 100 - buff;
 
-        int buff_l, buff_r;
-        buff_l = 200 + buff;
-        buff_r = 200 - buff;
+            if (buff_l < 0) {
+                buff_l = 0;
+            }
+            if (buff_r < 0) {
+                buff_r = 0;
+            }
+        }
 
         Control_Motor(buff_l, buff_r);
     }

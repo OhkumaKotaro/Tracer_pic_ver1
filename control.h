@@ -13,7 +13,7 @@ extern "C" {
 #endif
 
     void Control_Motor(int left, int right);
-    void Check_Sensor(void);
+    unsigned char Check_Sensor(void);
     int Control_Sensor(void);
 
 
