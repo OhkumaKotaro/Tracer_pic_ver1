@@ -56,22 +56,33 @@ unsigned char Mode_Switch(void) {
 }
 
 void Mode_Trace(void) {
-    int buff_l = 0, buff_r = 0;
+    int left = 0, right = 0;
+    //float sum=0;
+    int before=0;
     while (1) {
         if (Check_Sensor()) {
-            int buff = 15 * Control_Sensor();
+            int error=Control_Sensor();
+            int p = 15 * error;
+            //int i=0.1*sum;
+            int d = before-error;
+            int buff=p+1.5*d;
 
-            buff_l = 100 + buff;
-            buff_r = 100 - buff;
+            left = 100 + buff;
+            right = 100 - buff;
 
-            if (buff_l < 0) {
-                buff_l = 0;
+            if (left < 0) {
+                left = 0;
+            }else if(left>400){
+                left=400;
             }
-            if (buff_r < 0) {
-                buff_r = 0;
+                
+            if (right < 0) {
+                right = 0;
+            }else if(right>400){
+                right=400;
             }
         }
 
-        Control_Motor(buff_l, buff_r);
+        Control_Motor(left, right);
     }
 }
