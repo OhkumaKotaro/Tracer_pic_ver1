@@ -65,7 +65,9 @@ void Mode_Trace(void) {
             int p = 15 * error;
             //int i=0.1*sum;
             int d = before-error;
-            int buff=p+1.5*d;
+            before=error;
+            
+            int buff=p+100*d;
 
             left = 100 + buff;
             right = 100 - buff;
