@@ -1,7 +1,7 @@
 /* 
  * File:   test.h
  * Author: kotaro
- *
+ * 概要：test.c内の関数をプロトタイプ宣言
  * Created on 2019/01/02, 3:31
  */
 

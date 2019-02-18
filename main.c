@@ -6,11 +6,11 @@
 
 
 void main(void) {
-    Config_mode();
+    Config_mode();//初期設定
     
     //infinit roop
     while(1){
-        Mode_Serect(Mode_Switch());
+        Mode_Serect(Mode_Switch());//モードを選択し実行
     }
 
 }

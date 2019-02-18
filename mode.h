@@ -1,7 +1,7 @@
 /* 
  * File:   mode.h
  * Author: kotaro
- *
+ * 概要：mode.c内の関数のプロトタイプ宣言
  * Created on 2019/01/05, 22:32
  */
 

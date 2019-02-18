@@ -1,7 +1,7 @@
 /* 
  * File:   control.h
  * Author: kotaro
- *
+ * 概要：control.c内の関数のプロトタイプ宣言
  * Created on 2019/01/07, 20:51
  */
 

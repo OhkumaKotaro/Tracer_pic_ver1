@@ -1,7 +1,7 @@
 /* 
  * File:   interface.h
  * Author: kotaro
- *
+ * 概要：interface.c内の関数のプロトタイプ宣言
  * Created on 2019/01/03, 22:23
  */
 
